@@ -632,7 +632,7 @@ header .contact-info .header__contact--talk img {
 .services {
   text-align: center;
   padding: 80px 20px;
-  background: url("../img/bg-image-Services.jpg") no-repeat center center/cover, rgba(0, 0, 0, 0.8);
+  background: url("../img/other/bg-image-Services.jpg") no-repeat center center/cover, rgba(0, 0, 0, 0.8);
   position: relative;
 }
 .services .services__footer {
@@ -713,7 +713,7 @@ header .contact-info .header__contact--talk img {
   z-index: 1;
 }
 .services__items .service-item:hover {
-  background: url(../img/image-card-services.jpg);
+  background: url(../img/other/image-card-services.jpg);
   color: white;
   -webkit-box-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 80px 80px -20px rgba(154, 156, 165, 0.08);
           box-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 80px 80px -20px rgba(154, 156, 165, 0.08);

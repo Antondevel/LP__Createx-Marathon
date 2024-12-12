@@ -612,7 +612,7 @@ header {
 .services {
     text-align: center;
     padding: 80px 20px;
-    background: url('../img/bg-image-Services.jpg') no-repeat center center/cover,
+    background: url('../img/other/bg-image-Services.jpg') no-repeat center center/cover,
         rgba(0, 0, 0, 0.8);
     position: relative;
 
@@ -689,7 +689,7 @@ header {
             }
 
             &:hover {
-                background: url(../img/image-card-services.jpg);
+                background: url(../img/other/image-card-services.jpg);
                 color: white;
 
                 &::before {
