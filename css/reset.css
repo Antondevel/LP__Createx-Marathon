@@ -1,0 +1,67 @@
+Нормализация блочной модели *,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+/* Убираем отступы и маркеры у списков */
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Убираем отступы у элементов */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+dl {
+    margin: 0;
+    padding: 0;
+}
+
+/* Убираем стандартные стили для таблиц */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Убираем стили у изображений */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Убираем стили у форм и кнопок */
+input,
+textarea,
+select,
+button {
+    font: inherit;
+    /* Наследуем шрифт */
+}
+
+/* Убираем стили у ссылок */
+a {
+    text-decoration: none;
+    /* Убираем подчеркивание */
+    color: inherit;
+    /* Унаследовать цвет текста */
+}
+
+/* Убираем анимации для пользователей с ограниченными возможностями */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

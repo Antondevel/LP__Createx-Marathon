@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateX Construction</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="/img/hero-bg.jpg" as="image">
+    <link rel="preload" href="/img/another-slide.jpg" as="image">
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <!-- Подключение стилей Slick -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Подключение библиотеки jQuery (Slick требует jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">CREATE <img src="/img/X.svg" alt=""></div>
+
+            <!-- Бургер-кнопка -->
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="contact-info">
+                <div class="header__contact header__contact--call">
+                    <div class="header__contact-img">
+                        <img src="/img/phone.svg" alt="Phone">
+                    </div>
+                    <div class="header__contact-info">
+                        <span class="header__contact-title">Call us</span>
+                        <a href="tel:+14055550128" class="header__contact-number">(405) 555-0128</a>
+                    </div>
+                </div>
+                <div class="header__contact header__contact--talk">
+                    <div class="header__contact-img">
+                        <img src="/img/Talk.svg" alt="Talk">
+                    </div>
+                    <div class="header__contact-info">
+                        <span class="header__contact-title">Talk to us</span>
+                        <a href="mailto:hello@createx.com" class="header__contact-email">hello@createx.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="header">
+        <div class="slider-btn left" onclick="prevSlide()">
+            <img src="/img/Left.svg" alt="Left arrow">
+        </div>
+        <div class="slider-btn right" onclick="nextSlide()">
+            <img src="/img/Right.svg" alt="Right arrow">
+        </div>
+
+        <div class="slider">
+            <div class="slider-item">
+                <div class="container header__container">
+                    <h1>CREATE<span>X</span> CONSTRUCTION</h1>
+                    <p>Cras ultrices leo vitae non viverra. Fringilla nisi quisque<br> consequat, dignissim vitae proin
+                        ipsum sed.
+                        Pellentesque nec<br>turpis purus eget pellentesque integer ipsum elementum felis. </p>
+                    <div class="buttons">
+                        <a href="#" class="btn">Learn More About Us</a>
+                        <a href="#" class="btn btn-primary">Submit Request</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-item">
+                <div class="container header__container">
+                    <h1>CREATE<span>X</span> CONSTRUCTION</h1>
+                    <p>Cras ultrices leo vitae non viverra. Fringilla nisi quisque<br> consequat, dignissim vitae proin
+                        ipsum sed.
+                        Pellentesque nec<br>turpis purus eget pellentesque integer ipsum elementum felis. </p>
+                    <div class="buttons">
+                        <a href="#" class="btn">Learn More About Us</a>
+                        <a href="#" class="btn btn-primary">Submit Request</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-item">
+                <div class="container header__container">
+                    <h1>CREATE<span>X</span> CONSTRUCTION</h1>
+                    <p>Cras ultrices leo vitae non viverra. Fringilla nisi quisque<br> consequat, dignissim vitae proin
+                        ipsum sed.
+                        Pellentesque nec<br>turpis purus eget pellentesque integer ipsum elementum felis. </p>
+                    <div class="buttons">
+                        <a href="#" class="btn">Learn More About Us</a>
+                        <a href="#" class="btn btn-primary">Submit Request</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-item">
+                <div class="container header__container">
+                    <h1>CREATE<span>X</span> CONSTRUCTION</h1>
+                    <p>Cras ultrices leo vitae non viverra. Fringilla nisi quisque<br> consequat, dignissim vitae proin
+                        ipsum sed.
+                        Pellentesque nec<br>turpis purus eget pellentesque integer ipsum elementum felis. </p>
+                    <div class="buttons">
+                        <a href="#" class="btn">Learn More About Us</a>
+                        <a href="#" class="btn btn-primary">Submit Request</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <span class="active" onclick="goToSlide(1)">01</span>
+            <span onclick="goToSlide(2)">02</span>
+            <span onclick="goToSlide(3)">03</span>
+            <span onclick="goToSlide(4)">04</span>
+        </div>
+    </section>
+
+
+
+
+    <section class="section" id="WeAre">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">We are Createx Construction Bureau</h2>
+                <h3 class="section__suptitle">We are rightfully considered to be the best construction company in the
+                    USA.</h3>
+                <div class="section__video">
+                    <video controls width="1230" height="500">
+                        <source src="/Video/40813-426920959.mp4" type="video/mp4">
+                    </video>
+                    <button class="play-button">
+                        <span class="play-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section" id="values">
+        <div class="container">
+
+            <div class="section__header">
+                <h2 class="section__title">Our core values </h2>
+                <h3 class="section__suptitle">Our mission is to set the highest standards for construction sphere.</h3>
+
+
+
+            </div>
+
+
+            <div class="values">
+                <div class="values__item  values__item--border">
+                    <img class="values__icon" src="/img/like.svg" alt="">
+
+                    <div class="values__title">Quality</div>
+                    <div class="values__text">Culpa nostrud commodo ea consequat aliquip reprehenderit. Veniam velit
+                        nostrud
+                        aliquip sunt.</div>
+                </div>
+                <div class="values__item  values__item--border">
+                    <img class="values__icon" src="/img/hand.svg" alt="">
+
+                    <div class="values__title values__title--safety">Safety</div>
+                    <div class="values__text">Anim reprehenderit sint voluptate exercitation adipisicing laborum
+                        adipisicing. Minim empor est ea.</div>
+                </div>
+
+                <div class="values__item  values__item--border">
+                    <img class="values__icon" src="/img/slippers.svg" alt="">
+
+                    <div class="values__title">Comfort</div>
+                    <div class="values__text">Sit veniam aute dolore adipisicing nulla sit culpa. Minim mollit voluptate
+                        ullamco
+                        proident ea ad.</div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+    <section class="section section-form" id="form">
+        <div class="container">
+
+            <div class="form-container">
+                <div class="title">
+                    <h3>Want to know more? Ask us a question:</h3>
+                </div>
+                <form class="horizontal-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" placeholder="Your name" class="form__input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input id="phone" type="tel" placeholder="Your phone" class="form__input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Your message" class="form__textarea" required></textarea>
+                    </div>
+
+                    <button type="submit" class="form__button">SEND </button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="services__title">Our services</h2>
+            <p class="services__description">Createx Construction Bureau is a construction giant with a full range of
+                construction services.</p>
+
+            <div class="services__items">
+                <div class="service-item">
+
+                    <img src="/img/services/ic-construction.svg" alt="Construction" class="service-item__icon">
+                    <h3 class="service-item__title">Construction</h3>
+                </div>
+
+                <div class="service-item">
+                    <img src="/img/services/ic-plan.svg" alt="Project Development" class="service-item__icon">
+                    <h3 class="service-item__title">Project Development</h3>
+                </div>
+
+                <div class="service-item">
+                    <img src="img/services/ic-pantone.svg" alt="Interior Design" class="service-item__icon">
+                    <h3 class="service-item__title">Interior Design</h3>
+                </div>
+
+                <div class="service-item">
+                    <img src="img/services/ic-painting.svg" alt="Repairs" class="service-item__icon">
+                    <h3 class="service-item__title">Repairs</h3>
+                </div>
+            </div>
+
+            <div class="services__footer">
+                <a href="#services" class="services__link">Learn more about our services</a>
+                <button class="services__button">View Services</button>
+            </div>
+        </div>
+    </section>
+    <!------------------------------ PROJECTS -->
+
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section__header projects__title--arrow">
+                <h2 class="section__title projects__title">
+                    Browse our selected projects
+                    <br>and learn more about our work
+                </h2>
+                <div class="arrow">
+                    <div class="slider-btn slider__prev" id="prev-btn">
+                        <img src="/img/Left.svg" alt="Left arrow">
+                    </div>
+                    <div class="slider-btn slider__next" id="next-btn">
+                        <img src="/img/Right.svg" alt="Right arrow">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Контейнер с проектами, обернут в id="projects-slider" -->
+            <div class="projects__items" id="projects-slider">
+                <div class="card slide">
+                    <img src="/img/portfolio/Portfolio-1.jpg" alt="Service 1" class="card__image">
+                    <div class="card__content">
+                        <h3 class="card__title">Red Finger Building</h3>
+                        <p class="card__subtitle">Business Centers</p>
+                    </div>
+                    <button class="card__button">View Project</button>
+                </div>
+                <div class="card slide">
+                    <img src="/img/portfolio/Portfolio-1.jpg" alt="Service 2" class="card__image">
+                    <div class="card__content">
+                        <h3 class="card__title">Blue Horizon Tower</h3>
+                        <p class="card__subtitle">Residential Buildings</p>
+                    </div>
+                    <button class="card__button">View Project</button>
+                </div>
+                <div class="card slide">
+                    <img src="/img/portfolio/Portfolio-1.jpg" alt="Service 3" class="card__image">
+                    <div class="card__content">
+                        <h3 class="card__title">Greenleaf Plaza</h3>
+                        <p class="card__subtitle">Commercial Spaces</p>
+                    </div>
+                    <button class="card__button">View Project</button>
+                </div>
+                <div class="card slide">
+                    <img src="/img/portfolio/Portfolio-3.jpg" alt="Service 4" class="card__image">
+                    <div class="card__content">
+                        <h3 class="card__title">Urban Skyline</h3>
+                        <p class="card__subtitle">Residential Spaces</p>
+                    </div>
+                    <button class="card__button">View Project</button>
+                </div>
+                <div class="card slide">
+                    <img src="/img/portfolio/Portfolio-3.jpg" alt="Service 4" class="card__image">
+                    <div class="card__content">
+                        <h3 class="card__title">Urban Skyline</h3>
+                        <p class="card__subtitle">Residential Spaces</p>
+                    </div>
+                    <button class="card__button">View Project</button>
+                </div>
+                <div class="card slide">
+                    <img src="/img/portfolio/Portfolio-3.jpg" alt="Service 4" class="card__image">
+                    <div class="card__content">
+                        <h3 class="card__title">Urban Skyline</h3>
+                        <p class="card__subtitle">Residential Spaces</p>
+                    </div>
+                    <button class="card__button">View Project</button>
+                </div>
+            </div>
+
+            <div class="projects__footer">
+                <a href="#projects" class="projects__link">Explore all our works</a>
+                <button class="projects__button">View Portfolio</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-------------------------------REVIEWS-->
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Supported by 12+ partners</h2>
+            </div>
+
+            <!-- Блок с логотипами партнеров -->
+            <div class="partners-img">
+                <img src="/img/partners/InDepth Consulting Logo - Untitled Page.png" alt="Partner 1">
+                <img src="/img/partners/Higher Fit Logo - Untitled Page.png" alt="Partner 2">
+                <img src="/img/partners/Sentinal Consulting Logo.png" alt="Partner 3">
+                <img src="/img/partners/Happy Home Logo.png" alt="Partner 4">
+                <img src="/img/partners/For Sale Logo.png" alt="Partner 5">
+                <img src="/img/partners/client-logo.png" alt="Partner 6">
+            </div>
+
+            <!-- Отзывы клиентов -->
+            <div class="clients-saying">
+                <div class="clients-reviews">
+                    <div class="section__header">
+                        <h2 class="section__title clients__title">What our clients are saying</h2>
+                    </div>
+
+                    <!-- Слайдер с отзывами -->
+                    <div class="clients-slider slick-slider">
+                        <div class="client-slide">
+                            <img class="client-photo" src="/img/partners/profile-image.png" alt="Client photo">
+                            <p class="client-review">
+                                Ipsum aute sunt aliquip aute et occaecat. Anim minim do cillum eiusmod enim. Consectetur
+                                magna cillum consequat minim laboris cillum laboris voluptate minim proident
+                                exercitation
+                                ullamco.
+                            </p>
+                            <div class="client-info">
+                                <p class="client-name">Shawn Edwards</p>
+                                <p class="client-position">Position, Company name</p>
+                            </div>
+                        </div>
+                        <div class="client-slide">
+                            <img class="client-photo" src="/img/partners/profile-image.png" alt="Client photo">
+                            <p class="client-review">
+                                Ipsum aute sunt aliquip aute et occaecat. Anim minim do cillum eiusmod enim. Consectetur
+                                magna cillum consequat minim laboris cillum laboris voluptate minim proident
+                                exercitation
+                                ullamco.
+                            </p>
+                            <div class="client-info">
+                                <p class="client-name">Shawn Edwards</p>
+                                <p class="client-position">Position, Company name</p>
+                            </div>
+                        </div>
+                        <div class="client-slide">
+                            <img class="client-photo" src="/img/partners/profile-image.png" alt="Client photo">
+                            <p class="client-review">
+                                Ipsum aute sunt aliquip aute et occaecat. Anim minim do cillum eiusmod enim. Consectetur
+                                magna cillum consequat minim laboris cillum laboris voluptate minim proident
+                                exercitation
+                                ullamco.
+                            </p>
+                            <div class="client-info">
+                                <p class="client-name">Shawn Edwards</p>
+                                <p class="client-position">Position, Company name</p>
+                            </div>
+                        </div>
+                        <!-- Другие слайды -->
+                    </div>
+
+                    <!-- Кнопки навигации (если нужно, можно сделать их скрытыми, так как Slick сам добавит свои кнопки) -->
+                    <div class="arrow client-arrow">
+                        <div class="slider-btn slider__prev" id="client-prev-btn">
+                            <img src="/img/Left.svg" alt="Previous">
+                        </div>
+                        <div class="slider-btn slider__next" id="client-next-btn">
+                            <img src="/img/Right.svg" alt="Next">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Фото отзыва -->
+                <div class="review-photo">
+                    <img src="/img/partners/reviews.jpg" alt="Review photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Facts -->
+    <section class="section" id="facts">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title facts-title">Some facts and figures</h2>
+            </div>
+            <div class="facts-imgages-container">
+
+                <div class="facts-imgages">
+                    <img src="/img/Figures/figure.png" alt="">
+                    <img src="/img/Figures/figure-1.png" alt="">
+                    <img src="/img/Figures/figure-2.png" alt="">
+                    <img src="/img/Figures/figure-3.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS -->
+
+    <section class="section" id="news">
+        <div class="container">
+            <!-- Заголовок секции -->
+            <div class="section__header">
+                <h2 class="section__title">Recent news</h2>
+            </div>
+
+            <!-- Карточки с новостями -->
+            <div class="facts-cards">
+                <!-- Левая карточка -->
+                <div class="left-card">
+                    <img src="/img/recent news/article/image-2.jpg" alt="Article Image" class="card__image">
+                    <div class="card__content">
+
+                        <a href="#">
+                            <h3 class="card__title facts-card-title">How to Build Climate Change-Resilient
+                                Infrastructure
+                            </h3>
+                        </a>
+                        <div class="news-card-info">
+                            <a href="#">
+                                <p class="news-category">Industry News</p>
+                            </a>
+                            <p class="news-date">June 24, 2020</p>
+                            <div class="news-comments">
+                                <img src="/img/recent news/comments.svg" alt="Comments Icon">
+                                <span>4 comments</span>
+                            </div>
+                        </div>
+                        <p class="card__review">
+                            Ipsum aliquet nisi, hendrerit rhoncus quam tortor, maecenas faucibus. Tincidunt aliquet sit
+                            vel,
+                            venenatis nulla. Integer bibendum turpis convallis enim, nibh convallis...
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Правая колонка -->
+                <div class="right-cards">
+                    <!-- Первая карточка -->
+                    <div class="right-card">
+                        <img src="/img/recent news/article/image.jpg" alt="Article Image" class="card__image">
+                        <div class="card__content">
+                            <a href="#">
+                                <h3 class="card__title facts-card-title">How Construction Can Help Itself</h3>
+                            </a>
+                            <div class="news-card-info">
+                                <a href="#">
+                                    <p class="news-category">Industry News</p>
+                                </a>
+                                <p class="news-date">June 24, 2020</p>
+                                <div class="news-comments">
+                                    <img src="/img/recent news/comments.svg" alt="Comments Icon">
+                                    <span>4 comments</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Вторая карточка -->
+                    <div class="right-card">
+                        <img src="/img/recent news/article/image-1.jpg" alt="Article Image" class="card__image">
+                        <div class="card__content">
+                            <a href="#">
+                                <h3 class="card__title facts-card-title">Types of Flooring Materials</h3>
+
+                            </a>
+                            <div class="news-card-info">
+
+                                <a href="#">
+                                    <p class="news-category">Industry News</p>
+                                </a>
+                                <p class="news-date">June 24, 2020</p>
+                                <div class="news-comments">
+                                    <img src="/img/recent news/comments.svg" alt="Comments Icon">
+                                    <span>4 comments</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects__footer">
+                <a href="#projects" class="projects__link">Explore all our works</a>
+                <button class="projects__button">View Portfolio</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- APLICATION -->
+
+    <section class="application">
+        <div class="application-container">
+            <div id="application-form">
+
+                <form action="#" method="POST">
+                    <h2>A quick way to discuss details</h2>
+
+                    <label for="name">Name*</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                    <label for="phone">Phone*</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your working email" required>
+
+                    <label for="message">Message*</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree">I agree to receive communications from Createx Construction Bureau.</label>
+                    </div>
+
+                    <button type="submit">send request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER  -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="footer-container">
+                    <div class="create-container">
+
+
+                        <div class="logo-icons-container">
+                            <div class="logo">
+                                CREATE <img src="/img/X.svg" alt="">
+                            </div>
+                            <div class="footer-ic">
+                                <a href="https://web.whatsapp.com" target="_blank" class="social-icon">
+                                    <img src="/img/Footer/Whatsapp.svg" alt="WhatsApp">
+                                </a>
+                                <a href="https://messenger.com" target="_blank" class="social-icon">
+                                    <img src="/img/Footer/Messanger.svg" alt="Messenger">
+                                </a>
+                                <a href="https://twitter.com" target="_blank" class="social-icon">
+                                    <img src="/img/Footer/Twitter.svg" alt="Twitter">
+                                </a>
+                                <a href="https://facebook.com" target="_blank" class="social-icon">
+                                    <img src="/img/Footer/Facebook.svg" alt="Facebook">
+                                </a>
+
+                                <a href="https://youtube.com" target="_blank" class="social-icon">
+                                    <img src="/img/Footer/YouTube.svg" alt="YouTube">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="footer-text create-text">
+                            <p>
+                                Createx Construction Bureau has been successfully operating in the USA<br> construction
+                                market
+                                since
+                                2000. We are proud to offer you quality construction and exemplary service. Our mission
+                                is
+                                to
+                                set
+                                the highest standards for construction sphere.
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="let-stay-container">
+                        <h2>Let’s stay in touch</h2>
+                        <div class="input-container">
+
+                            <input type="email" id="email" name="email" placeholder="Your email adress" required>
+                            <button>subscribe</button>
+
+                        </div>
+                        <p class="footer-text let-stay-text">*Subscribe to our newsletter to receive communications
+                            and
+                            early updates
+                            from Createx
+                            Construction Bureau.</p>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="footer-low">
+                    <div>
+                        <div class="footer-information">
+                            <h4>HEAD OFFICE</h4>
+                            <div class="adress">
+                                <p>Adress:</p>
+                                <p>
+                                    8502 Preston Rd. Inglewood, New York
+                                </p>
+                            </div>
+                            <div class="call">
+                                <p>Call:</p>
+                                <p>(405) 555-0128</p>
+                            </div>
+
+                            <div class="email">
+                                <p>Email:</p>
+                                <p>hello@createx.com</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="we-are">
+                        <h4>WHO WE ARE</h4>
+                        <a href="#">About us</a>
+                        <a href="#">Available Positions</a>
+                        <a href="#">Contacts</a>
+
+
+                    </div>
+
+                    <div class="experience">
+
+                        <h4>OUR EXPERIENCE</h4>
+                        <a href="#">Servises</a>
+                        <a href="#">Work</a>
+                        <a href="#">News</a>
+                    </div>
+
+                </div>
+                <div class="copyright">
+                    <p>© All rights reserved. Made with</p>
+                    <img src="/img/Footer/Vector (Stroke).svg" alt="Heart icon">
+                    <p>by Createx Studio</p>
+                </div>
+
+            </div>
+            <!-- container -->
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+    <!-- Подключение скрипта Slick -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+</body>
+
+</html>
