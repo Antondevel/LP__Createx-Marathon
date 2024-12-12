@@ -967,7 +967,7 @@ header .contact-info .header__contact--talk img {
   left: -62px;
   width: 30%;
   height: 865px;
-  background: url(/img/Figures/bg-image.png) top left/cover no-repeat;
+  background: url(img/Figures/bg-image.png) top left/cover no-repeat;
   z-index: -1;
 }
 #facts .facts-title {
@@ -1087,7 +1087,7 @@ header .contact-info .header__contact--talk img {
 }
 
 .application {
-  background: url(/img/Aplication/image.jpg) no-repeat center center;
+  background: url(img/Aplication/image.jpg) no-repeat center center;
   background-size: cover;
   width: 100%;
   min-height: 100vh;
