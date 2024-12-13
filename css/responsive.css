@@ -1,3 +1,4 @@
+/* Адаптация для экранов шириной до 1280px */
 @media (max-width: 1280px) {
     .container {
         max-width: 1000px;
@@ -12,6 +13,7 @@
     }
 }
 
+/* Адаптация для экранов шириной до 1024px */
 @media (max-width: 1024px) {
     .container {
         max-width: 900px;
@@ -118,7 +120,7 @@
         top: 100%;
         left: -100%;
         width: 100%;
-        background: rgb(233, 235, 235);
+        background: rgb(255, 255, 255);
         padding: 20px;
         display: none;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -383,14 +385,14 @@
 
 
     header .contact-info.active {
-        margin-left: 60%;
+        margin-left: 58%;
         margin-right: 10px;
-
         text-align: center;
-        padding-top: 80%;
+        padding-top: 53%;
         font-size: 12px;
-
     }
+
+
 
     header .contact-info .header__contact a {
         color: #333;
@@ -614,9 +616,6 @@
 
 
 
-
-
-
     .footer-low .we-are,
     .experience {
         padding-left: 0px;
@@ -631,6 +630,26 @@
 
 }
 
+@media (max-width: 375px) {
+    header .contact-info.active {
+        margin-left: 58%;
+        margin-right: 10px;
+        text-align: start;
+        padding-top: 80%;
+        font-size: 12px;
+    }
+
+
+    .copyright {
+
+        font-size: 12px;
+
+    }
+}
+
+
+
+/* Горизональное положение */
 @media screen and (max-width: 992px) and (orientation: landscape) {
 
     .header h1 {
@@ -645,6 +664,25 @@
 
 }
 
+@media screen and (max-width: 932px) and (orientation: landscape) {
+
+    .values .values__item:nth-child(1)::after,
+    .values .values__item:nth-child(2)::after {
+
+        top: 185px;
+    }
+
+
+    .footer-container .create-container {
+
+        padding-right: 185px;
+    }
+
+    .footer-low .footer-information {
+        width: 77%;
+    }
+}
+
 @media screen and (max-width: 700px) and (orientation: landscape) {
 
     .header .buttons .btn {
@@ -657,6 +695,17 @@
 
     header .contact-info.active {
 
+        padding-top: 0;
+    }
+
+    .footer-container .create-container {
+        padding-right: 10px;
+    }
+
+
+    .footer-low .we-are,
+    .experience {
+        padding-left: 0;
         padding-top: 0;
     }
 }

@@ -323,7 +323,6 @@ header {
     visibility: visible;
 }
 
-
 /* Обновление стилей слайдов */
 .slider-item {
 
@@ -357,8 +356,8 @@ header {
     visibility: hidden;
 }
 
-// --------------------------WE ARE
-/* Общие стили секции */
+// ---------------------------------------WE ARE
+
 .section__video {
     position: relative;
     width: 100%;
@@ -412,8 +411,7 @@ header {
     /* Скрывает кнопку после начала воспроизведения */
 }
 
-
-//------------------------------------"VALUES"
+//---------------------------------------VALUES
 
 .values {
     display: flex;
@@ -475,8 +473,7 @@ header {
     }
 }
 
-// ------------------------------------"FORM"
-
+// --------------------------------------FORM
 
 .form-container {
     position: relative;
@@ -607,7 +604,7 @@ header {
     }
 }
 
-// ----------------------------------"SERVICES"
+// -----------------------------------SERVICES
 
 .services {
     text-align: center;
@@ -720,8 +717,7 @@ header {
     }
 }
 
-
-//-----------------------------------"PORTFOLIO"
+//------------------------------------PORTFOLIO
 
 .projects__title {
     text-align: start;
@@ -878,8 +874,7 @@ header {
     }
 }
 
-
-// -----------------------------------"REVIEWS"
+// ------------------------------------------REVIEWS
 #reviews {
     position: relative;
     background-color: rgba(244, 245, 246, 1);
@@ -943,7 +938,7 @@ header {
     }
 }
 
-//------------------------------------'FACTS'
+//-------------------------------------------FACTS
 #facts {
     position: relative;
     z-index: 1;
@@ -977,7 +972,7 @@ header {
     }
 }
 
-// --------------------------------------NEWS
+// ------------------------------------------NEWS
 .facts-cards {
     display: flex;
     justify-content: space-between;
@@ -1065,7 +1060,7 @@ header {
     cursor: pointer;
 }
 
-// --------------------------------------APLICATION  
+// -----------------------------------------APLICATION  
 .application {
     background: url(../img/Aplication/image.jpg) no-repeat center center;
     background-size: cover;
@@ -1170,7 +1165,7 @@ header {
     }
 }
 
-// --------------------------------------FOOTER
+// -----------------------------------------FOOTER
 .footer {
     display: flex;
     justify-content: space-between;
