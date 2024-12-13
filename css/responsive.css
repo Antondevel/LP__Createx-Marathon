@@ -425,6 +425,15 @@
         font-size: 15px;
     }
 
+    .section__video {
+        height: 100%;
+    }
+
+    .section__video video {
+
+        height: 60%;
+    }
+
 
 
     /* values */
