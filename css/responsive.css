@@ -366,9 +366,15 @@
 
     }
 
+    .header .pagination {
+        margin-left: 2%;
+
+    }
+
     .header .pagination span {
-        width: 130px;
-        display: none;
+        width: 100px;
+        font-size: 20px;
+
     }
 
 
@@ -637,6 +643,11 @@
         text-align: start;
         padding-top: 80%;
         font-size: 12px;
+    }
+
+    .header .pagination span {
+        width: 86px;
+
     }
 
 
