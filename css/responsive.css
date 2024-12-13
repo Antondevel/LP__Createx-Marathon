@@ -632,7 +632,7 @@
 
 }
 
-@media (max-width: 375px) {
+@media (max-width: 412px) {
     header .contact-info.active {
         margin-left: 58%;
         margin-right: 10px;
