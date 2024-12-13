@@ -367,7 +367,7 @@
     }
 
     .header .pagination {
-        margin-left: 2%;
+        margin-left: 10%;
 
     }
 
@@ -641,7 +641,7 @@
 
 }
 
-@media (max-width: 412px) {
+@media (max-width: 430px) {
     header .contact-info.active {
         margin-left: 58%;
         margin-right: 10px;
@@ -650,17 +650,46 @@
         font-size: 12px;
     }
 
+
+    .header .pagination {
+        margin-left: 7%;
+    }
+
     .header .pagination span {
         width: 86px;
 
-    }
 
+
+
+    }
 
     .copyright {
 
         font-size: 12px;
 
     }
+}
+
+
+
+
+@media (max-width: 375px) {
+
+
+
+    .header .pagination {
+        margin-left: 11%;
+    }
+
+    .header .pagination span {
+        width: 70px;
+
+
+
+
+    }
+
+
 }
 
 
