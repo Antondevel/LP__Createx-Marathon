@@ -189,65 +189,71 @@ $(document).ready(function () {
 
 
 // --------------------------------------------FACTS
-// Функция для анимации процента
 function animatePercentage(id, targetValue, duration) {
     const percentageElement = document.querySelector(`#${id} .percentage`);
     const ringProgress = document.querySelector(`#${id} .ring-progress`);
 
     const circumference = 433; // Длина окружности круга с радиусом 69
+    ringProgress.style.strokeDasharray = `${circumference} ${circumference}`;
+    ringProgress.style.strokeDashoffset = circumference;
 
     let currentValue = 0;
     const stepTime = duration / 100; // Время для одного шага
     const step = targetValue / 100; // Шаг увеличения для быстрого счета
 
-    let adjustedTargetValue = targetValue;
-
-    // Анимация числа и кольца
     const interval = setInterval(() => {
-        if (currentValue < adjustedTargetValue) {
+        if (currentValue < targetValue) {
             currentValue += step;
 
-            if (currentValue > adjustedTargetValue) currentValue = adjustedTargetValue;
+            if (currentValue > targetValue) currentValue = targetValue;
 
-            // Обновляем текст процента для каждого кольца
             if (id === 'ring1' || id === 'ring4') {
                 percentageElement.textContent = `${Math.floor(currentValue)}%`;
             } else if (id === 'ring3') {
-                // Для ring3 пропорционально увеличиваем число от 1 до 9452
-                const number = Math.floor((9452 * currentValue) / 94.52); // Пропорционально увеличиваем число
-                percentageElement.textContent = number; // Обновляем текст
+                const number = Math.floor((9452 * currentValue) / 94.52);
+                percentageElement.textContent = number;
             } else {
                 percentageElement.textContent = `${Math.floor(currentValue)}`;
             }
 
-            // Обновляем значение strokeDashoffset (плавное заполнение кольца)
-            const offset = circumference - (currentValue / 100) * circumference;  // Делаем деление на 100 для отображения процента
+            const offset = circumference - (currentValue / 100) * circumference;
             ringProgress.style.strokeDashoffset = offset;
-
         } else {
-            clearInterval(interval); // Останавливаем анимацию, когда целевое значение достигнуто
+            clearInterval(interval);
         }
     }, stepTime);
 }
 
-// Настроим IntersectionObserver для запуска анимации при прокрутке
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Запускаем анимацию, когда блок стал видим
-            animatePercentage('ring1', 98, 1000);  // 98% за 1 секунду
-            animatePercentage('ring2', 20, 600);  // Число 20 за 1 секунду
-            animatePercentage('ring3', 94.52, 3000);  // Число 9452 внутри, кольцо заполняется на 94.52%
-            animatePercentage('ring4', 100, 1000);  // 100% за 1 секунду
+function resetRing(id) {
+    const percentageElement = document.querySelector(`#${id} .percentage`);
+    const ringProgress = document.querySelector(`#${id} .ring-progress`);
 
-            // Прекращаем отслеживание после того, как анимация запущена
-            observer.disconnect();
-        }
-    });
-}, { threshold: 0.5 }); // Запускаем, когда 50% блока видны
+    percentageElement.textContent = id === 'ring3' ? '0' : '0%';
+    ringProgress.style.strokeDashoffset = 433; // Сбросить окружность
+}
 
-// Начинаем отслеживание блока с фактами
-observer.observe(document.querySelector('#facts'));
+const factsSection = document.querySelector('#facts');
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                animatePercentage('ring1', 98, 1000);
+                animatePercentage('ring2', 20, 600);
+                animatePercentage('ring3', 94.52, 3000);
+                animatePercentage('ring4', 100, 1000);
+            } else {
+                resetRing('ring1');
+                resetRing('ring2');
+                resetRing('ring3');
+                resetRing('ring4');
+            }
+        });
+    },
+    { threshold: 0.5 } // Анимация запускается, когда секция наполовину видна
+);
+
+observer.observe(factsSection);
+
 
 
 
