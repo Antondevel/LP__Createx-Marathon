@@ -293,24 +293,27 @@
     #reviews .partners-img {
 
 
-        justify-content: center;
-        padding: 64px 50px 167px;
+
+        justify-content: space-between;
+        padding: 64px 13px 100px;
         flex-wrap: wrap;
 
-
     }
 
-    #reviews .review-photo {
-        position: relative;
-        margin-top: 68px;
-        height: 66px;
-        z-index: 12;
-    }
 
-    .footer-container .input-container {
-        width: 100%;
-    }
 }
+
+#reviews .review-photo {
+    position: relative;
+    margin-top: 68px;
+    height: 66px;
+    z-index: 12;
+}
+
+.footer-container .input-container {
+    width: 100%;
+}
+
 
 /* Адаптация для экранов шириной до 576px */
 @media (max-width: 576px) {
