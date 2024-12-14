@@ -575,6 +575,14 @@
 
     }
 
+    #facts .loading-ring-container {
+
+
+        flex-wrap: wrap;
+
+
+    }
+
 
 
     #application-form button {
