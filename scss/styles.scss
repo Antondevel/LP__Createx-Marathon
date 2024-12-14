@@ -966,9 +966,83 @@ header {
         padding-top: 60px;
     }
 
-    .facts-imgages-container {
+    .loading-ring-container {
         display: flex;
         justify-content: center;
+        gap: 20px;
+    }
+
+    .loading-ring-container p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .loading-ring {
+        position: relative;
+    }
+
+    .ring-bg {
+        fill: none;
+        stroke-width: 6;
+    }
+
+    #ring1 .ring-bg {
+        stroke: rgb(248, 196, 137);
+    }
+
+    #ring2 .ring-bg {
+        stroke: rgb(243, 139, 172);
+    }
+
+    #ring3 .ring-bg {
+        stroke: rgb(155, 183, 254);
+    }
+
+    #ring4 .ring-bg {
+        stroke: rgb(148, 232, 215);
+    }
+
+    .ring-progress {
+        fill: none;
+        stroke-width: 6;
+        stroke-linecap: round;
+        stroke-dasharray: 433;
+        stroke-dashoffset: 433;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+        transition: stroke-dashoffset 1s ease-out;
+    }
+
+    .ring-bg {
+        fill: none;
+        stroke-width: 6;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+    }
+
+    #ring1 .ring-progress {
+        stroke: rgba(248, 152, 40, 1);
+    }
+
+    #ring2 .ring-progress {
+        stroke: rgba(245, 47, 110, 1);
+    }
+
+    #ring3 .ring-progress {
+        stroke: rgba(90, 135, 252, 1);
+    }
+
+    #ring4 .ring-progress {
+        stroke: rgba(3, 206, 164, 1);
+    }
+
+    .percentage {
+        font-size: 32px;
+        font-weight: bold;
+        color: #333;
+        position: absolute;
+        top: 50%;
+        left: 50%;
     }
 }
 

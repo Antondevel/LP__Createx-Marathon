@@ -983,13 +983,78 @@ header .contact-info .header__contact--talk img {
   margin-top: 30px;
   padding-top: 60px;
 }
-#facts .facts-imgages-container {
+#facts .loading-ring-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: 20px;
+}
+#facts .loading-ring-container p {
+  font-size: 14px;
+  text-align: center;
+}
+#facts .loading-ring {
+  position: relative;
+}
+#facts .ring-bg {
+  fill: none;
+  stroke-width: 6;
+}
+#facts #ring1 .ring-bg {
+  stroke: rgb(248, 196, 137);
+}
+#facts #ring2 .ring-bg {
+  stroke: rgb(243, 139, 172);
+}
+#facts #ring3 .ring-bg {
+  stroke: rgb(155, 183, 254);
+}
+#facts #ring4 .ring-bg {
+  stroke: rgb(148, 232, 215);
+}
+#facts .ring-progress {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 433;
+  stroke-dashoffset: 433;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: stroke-dashoffset 1s ease-out;
+  transition: stroke-dashoffset 1s ease-out;
+}
+#facts .ring-bg {
+  fill: none;
+  stroke-width: 6;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+#facts #ring1 .ring-progress {
+  stroke: rgb(248, 152, 40);
+}
+#facts #ring2 .ring-progress {
+  stroke: rgb(245, 47, 110);
+}
+#facts #ring3 .ring-progress {
+  stroke: rgb(90, 135, 252);
+}
+#facts #ring4 .ring-progress {
+  stroke: rgb(3, 206, 164);
+}
+#facts .percentage {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .facts-cards {
