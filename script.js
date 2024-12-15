@@ -1,3 +1,5 @@
+
+
 // ------------------------------------------------SLIDER HEADER 
 
 
@@ -80,9 +82,7 @@ document.querySelector('.slider').addEventListener('mouseleave', () => {
 });
 
 
-
-
-// ---------burger
+// -----------------------------------------burger
 
 // Получаем элементы
 document.addEventListener('DOMContentLoaded', () => {
@@ -100,7 +100,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// -------------------------------------------------Title animation
+// Проверка, находится ли элемент в зоне видимости
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top <= window.innerHeight && rect.bottom >= 0;
+}
 
+// Находим все секции
+const sections = document.querySelectorAll('.section');
+
+function handleScroll() {
+    sections.forEach((section) => {
+        if (isInViewport(section)) {
+            section.classList.add('animate'); // Активация анимации
+        } else {
+            section.classList.remove('animate'); // Удаление класса при выходе из зоны видимости
+        }
+    });
+}
+
+// Обработка прокрутки
+window.addEventListener('scroll', handleScroll);
+
+// Первичная проверка при загрузке страницы
+handleScroll();
 
 
 
@@ -183,9 +207,6 @@ $(document).ready(function () {
         adaptiveHeight: true,  // Адаптивная высота слайдера в зависимости от контента
     });
 });
-
-
-
 
 
 // --------------------------------------------FACTS

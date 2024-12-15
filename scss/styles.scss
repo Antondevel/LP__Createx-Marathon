@@ -54,6 +54,34 @@
     line-height: 42px;
 }
 
+/* Начальное состояние заголовков */
+/* Начальное состояние заголовков */
+.section__title,
+.section__suptitle {
+    transform: translateX(-100%);
+    /* Заголовки находятся за пределами экрана */
+    opacity: 0;
+    /* Скрыты */
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+
+}
+
+/* Когда секция в зоне видимости */
+.section.animate .section__title,
+.section.animate .section__suptitle {
+    transform: translateX(0);
+    /* Возвращаются в видимую область */
+    opacity: 1;
+    /* Становятся видимыми */
+
+}
+
+
+
+
+
+
+
 body {
     font-family: 'Ubuntu', sans-serif;
     color: #333;
@@ -62,6 +90,7 @@ body {
     .section__header {
         padding-top: 120px;
         text-align: center;
+
 
         .section__title {
             font-size: 46px;
@@ -613,6 +642,7 @@ header {
         rgba(0, 0, 0, 0.8);
     position: relative;
 
+
     .services__footer {
         margin-top: 50px;
         align-items: center;
@@ -624,21 +654,6 @@ header {
         .services__button {
             @extend .common__button;
         }
-    }
-
-    &__title {
-        font-family: Ubuntu, sans-serif;
-        font-size: 46px;
-        font-weight: 700;
-        line-height: 59.8px;
-        padding: 100px 0 24px;
-        color: #333;
-    }
-
-    &__description {
-        color: #777;
-        margin-bottom: 40px;
-        font-size: 16px;
     }
 
     &__items {
@@ -970,11 +985,13 @@ header {
         display: flex;
         justify-content: center;
         gap: 20px;
+        padding-top: 60px;
     }
 
     .loading-ring-container p {
         font-size: 14px;
         text-align: center;
+
     }
 
     .loading-ring {
@@ -1052,7 +1069,7 @@ header {
     justify-content: space-between;
     gap: 20px;
     text-align: center;
-
+    padding-top: 60px;
     margin-bottom: 100px;
 
     .left-card {
