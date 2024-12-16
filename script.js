@@ -1,6 +1,6 @@
 
 
-// ------------------------------------------------SLIDER HEADER 
+// -----------------------------------------------SLIDER HEADER 
 
 
 // Инициализация текущего слайда
@@ -82,7 +82,7 @@ document.querySelector('.slider').addEventListener('mouseleave', () => {
 });
 
 
-// -----------------------------------------burger
+// ----------------------------------------------BURGER
 
 // Получаем элементы
 document.addEventListener('DOMContentLoaded', () => {
@@ -98,24 +98,36 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-// -------------------------------------------------Title animation
-// Проверка, находится ли элемент в зоне видимости
-function isInViewport(element) {
+// ----------------------------------------------TITLE ANIMATION
+function isInViewport(element, offset = 0) {
     const rect = element.getBoundingClientRect();
-    return rect.top <= window.innerHeight && rect.bottom >= 0;
+    return (
+        rect.top <= window.innerHeight - offset &&
+        rect.bottom >= offset
+    );
 }
 
-// Находим все секции
+// Находим все секции и заголовок
 const sections = document.querySelectorAll('.section');
+const clientsTitle = document.querySelector('.clients__title');
 
 function handleScroll() {
+    const defaultOffset = 300; // Отступ для всех элементов
+    const clientsTitleOffset = 300; // Больше отступ для clients__title
+
     sections.forEach((section) => {
-        if (isInViewport(section)) {
+        let offset = defaultOffset; // По умолчанию отступ для всех секций
+
+        // Если это clients__title, используем больший отступ
+        if (section === clientsTitle) {
+            offset = clientsTitleOffset;
+        }
+
+        // Проверяем, находится ли элемент в зоне видимости
+        if (isInViewport(section, offset)) {
             section.classList.add('animate'); // Активация анимации
         } else {
-            section.classList.remove('animate'); // Удаление класса при выходе из зоны видимости
+            section.classList.remove('animate'); // Удаление класса при выходе
         }
     });
 }
@@ -125,9 +137,6 @@ window.addEventListener('scroll', handleScroll);
 
 // Первичная проверка при загрузке страницы
 handleScroll();
-
-
-
 
 
 
