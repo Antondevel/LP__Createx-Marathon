@@ -1,249 +1,209 @@
+// -----------------------------------------------SLIDER HEADER
 
-
-// -----------------------------------------------SLIDER HEADER 
-
-
-// Инициализация текущего слайда
 let currentSlide = 1;
-// Функция для переключения на предыдущий слайд
-function prevSlide() {
-    if (currentSlide === 1) {
-        currentSlide = 4; // Если это первый слайд, переходим к последнему
-    } else {
-        currentSlide--;
-    }
+const slides = document.querySelectorAll('.slider-item');
+const paginationItems = document.querySelectorAll('.pagination span');
+
+function updateSlider() {
+    // Скрываем все слайды
+    slides.forEach(slide => slide.classList.remove('slider-active', 'slider-prev', 'slider-next'));
+
+    // Показываем текущий слайд и определяем предыдущий/следующий
+    slides[currentSlide - 1].classList.add('slider-active');
+    const prevIndex = (currentSlide - 2 + slides.length) % slides.length;
+    const nextIndex = currentSlide % slides.length;
+    slides[prevIndex].classList.add('slider-prev');
+    slides[nextIndex].classList.add('slider-next');
+
+    // Обновляем пагинацию
+    paginationItems.forEach(item => item.classList.remove('active'));
+    paginationItems[currentSlide - 1].classList.add('active');
+}
+
+function changeSlide(direction) {
+    currentSlide = direction === 'next'
+        ? (currentSlide % slides.length) + 1
+        : (currentSlide - 2 + slides.length) % slides.length + 1;
     updateSlider();
 }
-// Функция для переключения на следующий слайд
-function nextSlide() {
-    if (currentSlide === 4) {
-        currentSlide = 1; // Если это последний слайд, переходим к первому
-    } else {
-        currentSlide++;
-    }
-    updateSlider();
-}
-// Функция для перехода на определенный слайд
+
 function goToSlide(slideNumber) {
     currentSlide = slideNumber;
     updateSlider();
 }
-// Функция для обновления слайдера
-function updateSlider() {
-    // Скрываем все слайды
-    const slides = document.querySelectorAll('.slider-item');
-    slides.forEach(slide => {
-        slide.classList.remove('slider-active'); // Убираем активный класс
-    });
 
-    // Показываем текущий слайд
-    const currentSlideElement = document.querySelector(`.slider-${currentSlide}`);
-    currentSlideElement.classList.add('slider-active'); // Добавляем активный класс
-
-    // Обновляем пагинацию
-    const paginationItems = document.querySelectorAll('.pagination span');
-    paginationItems.forEach(item => {
-        item.classList.remove('active');
-    });
-    paginationItems[currentSlide - 1].classList.add('active');
-}
-// Инициализация слайдера при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     updateSlider();
+    let slideInterval = setInterval(() => changeSlide('next'), 5000);
+
+    document.querySelector('.slider').addEventListener('mouseenter', () => clearInterval(slideInterval));
+    document.querySelector('.slider').addEventListener('mouseleave', () => slideInterval = setInterval(() => changeSlide('next'), 5000));
 });
-
-function updateSlider() {
-    const slides = document.querySelectorAll('.slider-item');
-
-    slides.forEach((slide, index) => {
-        slide.classList.remove('slider-active', 'slider-prev', 'slider-next');
-
-        if (index + 1 === currentSlide) {
-            slide.classList.add('slider-active'); // Текущий слайд
-        } else if (index + 1 === (currentSlide === 1 ? slides.length : currentSlide - 1)) {
-            slide.classList.add('slider-prev'); // Предыдущий слайд
-        } else if (index + 1 === (currentSlide === slides.length ? 1 : currentSlide + 1)) {
-            slide.classList.add('slider-next'); // Следующий слайд
-        }
-    });
-
-    // Обновление пагинации
-    const paginationItems = document.querySelectorAll('.pagination span');
-    paginationItems.forEach(item => item.classList.remove('active'));
-    paginationItems[currentSlide - 1].classList.add('active');
-}
-let slideInterval = setInterval(nextSlide, 5000); // Слайды переключаются каждые 5 секунд
-// Остановка автопрокрутки при взаимодействии с пользователем
-document.querySelector('.slider').addEventListener('mouseenter', () => {
-    clearInterval(slideInterval);
-});
-document.querySelector('.slider').addEventListener('mouseleave', () => {
-    slideInterval = setInterval(nextSlide, 5000);
-});
-
 
 // ----------------------------------------------BURGER
 
-// Получаем элементы
 document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('nav');
-    const contacts = document.querySelector('.contact-info')
+    const contacts = document.querySelector('.contact-info');
 
     burger.addEventListener('click', () => {
-        burger.classList.toggle('active'); // Переключаем класс для бургера
-        nav.classList.toggle('active'); // Переключаем класс для навигации
+        burger.classList.toggle('active');
+        nav.classList.toggle('active');
         contacts.classList.toggle('active');
     });
 });
 
-
 // ----------------------------------------------TITLE ANIMATION
+
 function isInViewport(element, offset = 0) {
     const rect = element.getBoundingClientRect();
-    return (
-        rect.top <= window.innerHeight - offset &&
-        rect.bottom >= offset
-    );
+    return rect.top <= window.innerHeight - offset && rect.bottom >= offset;
 }
 
-// Находим все секции и заголовок
 const sections = document.querySelectorAll('.section');
 const clientsTitle = document.querySelector('.clients__title');
 
 function handleScroll() {
-    const defaultOffset = 300; // Отступ для всех элементов
-    const clientsTitleOffset = 300; // Больше отступ для clients__title
+    const defaultOffset = 300;
+    const clientsTitleOffset = 300;
 
-    sections.forEach((section) => {
-        let offset = defaultOffset; // По умолчанию отступ для всех секций
-
-        // Если это clients__title, используем больший отступ
-        if (section === clientsTitle) {
-            offset = clientsTitleOffset;
-        }
-
-        // Проверяем, находится ли элемент в зоне видимости
+    sections.forEach(section => {
+        const offset = section === clientsTitle ? clientsTitleOffset : defaultOffset;
         if (isInViewport(section, offset)) {
-            section.classList.add('animate'); // Активация анимации
+            section.classList.add('animate');
         } else {
-            section.classList.remove('animate'); // Удаление класса при выходе
+            section.classList.remove('animate');
         }
     });
 }
 
-// Обработка прокрутки
 window.addEventListener('scroll', handleScroll);
-
-// Первичная проверка при загрузке страницы
 handleScroll();
-
-
 
 // ------------------------------------------WE ARE (video button)
 
 document.addEventListener("DOMContentLoaded", () => {
     const video = document.querySelector(".section__video video");
     const playButton = document.querySelector(".play-button");
+    const pauseButton = document.querySelector(".pause-button");
 
-    playButton.addEventListener("click", () => {
+    pauseButton.classList.add("hidden");
+
+    let hideButtonsTimer;
+
+    function hideButtons() {
+        hideButtonsTimer = setTimeout(() => {
+            if (!video.paused && !pauseButton.matches(':hover')) {
+                pauseButton.classList.add("hidden");
+            }
+        }, 1000);
+    }
+
+    function togglePlayPause() {
         if (video.paused) {
             video.play();
             playButton.classList.add("hidden");
+            pauseButton.classList.remove("hidden");
         } else {
             video.pause();
+            pauseButton.classList.add("hidden");
             playButton.classList.remove("hidden");
         }
+        clearTimeout(hideButtonsTimer);
+        hideButtons();
+    }
+
+    playButton.addEventListener("click", togglePlayPause);
+    pauseButton.addEventListener("click", togglePlayPause);
+    video.addEventListener("click", togglePlayPause);
+
+    video.addEventListener("play", () => {
+        playButton.classList.add("hidden");
+        pauseButton.classList.remove("hidden");
+        clearTimeout(hideButtonsTimer);
+        hideButtons();
     });
 
-    // Показываем кнопку при завершении видео
-    video.addEventListener("ended", () => {
+    video.addEventListener("pause", () => {
+        pauseButton.classList.add("hidden");
         playButton.classList.remove("hidden");
+        clearTimeout(hideButtonsTimer);
+        hideButtons();
     });
 
-    // Клик по самому видео для воспроизведения/остановки
-    video.addEventListener("click", () => {
-        if (video.paused) {
-            video.play();
-            playButton.classList.add("hidden");
-        } else {
-            video.pause();
-            playButton.classList.remove("hidden");
+    video.addEventListener("mousemove", () => {
+        if (!video.paused) {
+            pauseButton.classList.remove("hidden");
+            clearTimeout(hideButtonsTimer);
+            hideButtons();
         }
     });
+
+    video.addEventListener("mouseleave", () => {
+        if (!video.paused) {
+            hideButtons();
+        }
+    });
+
+    pauseButton.addEventListener("mouseenter", () => clearTimeout(hideButtonsTimer));
+    pauseButton.addEventListener("mouseleave", hideButtons);
 });
 
-//-------------------------------------------SLIDER PROJECTS
+// -------------------------------------------SLIDER PROJECTS & REVIEWS
+
 $(document).ready(function () {
     $('#projects-slider').slick({
-        infinite: true,        // Бесконечный цикл прокрутки
-        slidesToShow: 3,       // Показывать 3 слайда одновременно
-        slidesToScroll: 1,     // Прокручивать по 1 слайду за раз
-        arrows: true,          // Показать стрелки
-        prevArrow: '#prev-btn',// Связываем с вашими кастомными кнопками
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: '#prev-btn',
         nextArrow: '#next-btn',
-        responsive: [          // Адаптивность для разных разрешений
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2, // На экранах до 1024px показывать 2 слайда
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1, // На экранах до 768px показывать 1 слайд
-                    slidesToScroll: 1
-                }
-            }
+        responsive: [
+            { breakpoint: 1024, settings: { slidesToShow: 2 } },
+            { breakpoint: 768, settings: { slidesToShow: 1 } }
         ]
     });
-});
 
-
-//-------------------------------------------SLIDER REVIEWS 
-$(document).ready(function () {
     $('.clients-slider').slick({
-        slidesToShow: 1,       // Показывать 1 слайд
-        slidesToScroll: 1,     // Прокручивать по 1 слайду
-        dots: false,           // Убираем точки навигации
-        arrows: true,          // Включаем стрелки навигации
-        prevArrow: '#client-prev-btn',  // Кастомная кнопка "предыдущий"
-        nextArrow: '#client-next-btn',  // Кастомная кнопка "следующий"
-        autoplay: true,        // Включаем автопрокрутку
-        autoplaySpeed: 3000,   // Интервал автопрокрутки (3 секунды)
-        adaptiveHeight: true,  // Адаптивная высота слайдера в зависимости от контента
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        prevArrow: '#client-prev-btn',
+        nextArrow: '#client-next-btn',
+        autoplay: true,
+        autoplaySpeed: 3000,
+        adaptiveHeight: true,
     });
 });
 
-
 // --------------------------------------------FACTS
+
 function animatePercentage(id, targetValue, duration) {
     const percentageElement = document.querySelector(`#${id} .percentage`);
     const ringProgress = document.querySelector(`#${id} .ring-progress`);
+    const circumference = 433;
 
-    const circumference = 433; // Длина окружности круга с радиусом 69
     ringProgress.style.strokeDasharray = `${circumference} ${circumference}`;
     ringProgress.style.strokeDashoffset = circumference;
 
     let currentValue = 0;
-    const stepTime = duration / 100; // Время для одного шага
-    const step = targetValue / 100; // Шаг увеличения для быстрого счета
+    const stepTime = duration / 100;
+    const step = targetValue / 100;
 
     const interval = setInterval(() => {
         if (currentValue < targetValue) {
             currentValue += step;
-
-            if (currentValue > targetValue) currentValue = targetValue;
+            currentValue = Math.min(currentValue, targetValue);
 
             if (id === 'ring1' || id === 'ring4') {
                 percentageElement.textContent = `${Math.floor(currentValue)}%`;
             } else if (id === 'ring3') {
-                const number = Math.floor((9452 * currentValue) / 94.52);
-                percentageElement.textContent = number;
+                percentageElement.textContent = Math.floor((9452 * currentValue) / 94.52);
             } else {
-                percentageElement.textContent = `${Math.floor(currentValue)}`;
+                percentageElement.textContent = Math.floor(currentValue);
             }
 
             const offset = circumference - (currentValue / 100) * circumference;
@@ -259,7 +219,7 @@ function resetRing(id) {
     const ringProgress = document.querySelector(`#${id} .ring-progress`);
 
     percentageElement.textContent = id === 'ring3' ? '0' : '0%';
-    ringProgress.style.strokeDashoffset = 433; // Сбросить окружность
+    ringProgress.style.strokeDashoffset = 433;
 }
 
 const factsSection = document.querySelector('#facts');
@@ -279,13 +239,7 @@ const observer = new IntersectionObserver(
             }
         });
     },
-    { threshold: 0.5 } // Анимация запускается, когда секция наполовину видна
+    { threshold: 0.5 }
 );
 
 observer.observe(factsSection);
-
-
-
-
-
-

@@ -138,6 +138,7 @@
         width: 40%;
     }
 
+
     header .contact-info.active {
         display: block;
         /* Контактная информация появляется */

@@ -380,6 +380,7 @@ header .contact-info .header__contact--talk img {
   visibility: hidden;
 }
 
+/* Стиль для контейнера видео */
 .section__video {
   position: relative;
   width: 100%;
@@ -387,18 +388,22 @@ header .contact-info .header__contact--talk img {
   height: 500px;
   margin: auto;
   overflow: hidden;
+  /* Чтобы избежать выхода видео за пределы */
 }
 
-.section__video video {
-  display: block;
+video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  /* Растягивает видео, сохраняя пропорции */
+  /* Видео заполняет весь контейнер, сохраняя пропорции */
+  -o-object-position: center;
+     object-position: center;
+  /* Центрирует видео в контейнере */
 }
 
-.play-button {
+.play-button,
+.pause-button {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -406,7 +411,7 @@ header .contact-info .header__contact--talk img {
           transform: translate(-50%, -50%);
   width: 70px;
   height: 70px;
-  background-color: rgb(240, 90, 40);
+  background-color: rgba(255, 71, 10, 0.8);
   border: none;
   border-radius: 50%;
   display: -webkit-box;
@@ -425,9 +430,12 @@ header .contact-info .header__contact--talk img {
   transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
   transition: transform 0.3s ease, background-color 0.3s ease;
   transition: transform 0.3s ease, background-color 0.3s ease, -webkit-transform 0.3s ease;
+  z-index: 10;
+  /* Поверх видео */
 }
 
-.play-button:hover {
+.play-button:hover,
+.pause-button:hover {
   -webkit-transform: translate(-50%, -50%) scale(1.1);
           transform: translate(-50%, -50%) scale(1.1);
   background-color: rgb(240, 90, 40);
@@ -441,9 +449,28 @@ header .contact-info .header__contact--talk img {
   border-bottom: 10px solid transparent;
 }
 
-.play-button.hidden {
+.pause-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+}
+
+.pause-icon div {
+  width: 5px;
+  height: 20px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.hidden {
   display: none;
-  /* Скрывает кнопку после начала воспроизведения */
 }
 
 .values {
