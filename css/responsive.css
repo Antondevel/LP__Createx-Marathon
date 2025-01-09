@@ -484,6 +484,11 @@
         width: 100%;
     }
 
+    .values .values__item .values__icon {
+
+        margin-top: 20px;
+    }
+
     .values .values__item:nth-child(1)::after,
     .values .values__item:nth-child(2)::after {
         content: "";
