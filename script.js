@@ -114,6 +114,14 @@ document.addEventListener("DOMContentLoaded", () => {
         hideButtons();
     }
 
+    function showPauseButtonTemporarily() {
+        if (!video.paused) {
+            pauseButton.classList.remove("hidden");
+            clearTimeout(hideButtonsTimer);
+            hideButtons();
+        }
+    }
+
     playButton.addEventListener("click", togglePlayPause);
     pauseButton.addEventListener("click", togglePlayPause);
     video.addEventListener("click", togglePlayPause);
@@ -129,17 +137,10 @@ document.addEventListener("DOMContentLoaded", () => {
         pauseButton.classList.add("hidden");
         playButton.classList.remove("hidden");
         clearTimeout(hideButtonsTimer);
-        hideButtons();
     });
 
-    video.addEventListener("mousemove", () => {
-        if (!video.paused) {
-            pauseButton.classList.remove("hidden");
-            clearTimeout(hideButtonsTimer);
-            hideButtons();
-        }
-    });
-
+    // Desktop mouse events
+    video.addEventListener("mousemove", showPauseButtonTemporarily);
     video.addEventListener("mouseleave", () => {
         if (!video.paused) {
             hideButtons();
@@ -148,7 +149,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     pauseButton.addEventListener("mouseenter", () => clearTimeout(hideButtonsTimer));
     pauseButton.addEventListener("mouseleave", hideButtons);
+
+    // Mobile touch events
+    video.addEventListener("touchstart", () => {
+        showPauseButtonTemporarily();
+    });
+
+    pauseButton.addEventListener("touchstart", () => {
+        clearTimeout(hideButtonsTimer);
+    });
 });
+
 
 // -------------------------------------------SLIDER PROJECTS & REVIEWS
 
