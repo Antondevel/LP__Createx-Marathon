@@ -150,8 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pauseButton.addEventListener("mouseleave", hideButtons);
 });
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const video = document.querySelector(".section__video video");
 
@@ -165,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
         video.removeAttribute("controls");
     }
 });
+
 
 
 // -------------------------------------------SLIDER PROJECTS & REVIEWS
