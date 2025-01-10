@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         video.setAttribute("controls", "controls");
         playButton.style.display = "none";
         pauseButton.style.display = "none";
+        video.style.display = "block"; // Убедиться, что видео видно
         return;
     } else {
         // Оставить кастомные кнопки и стандартные элементы управления
