@@ -88,13 +88,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const playButton = document.querySelector(".play-button");
     const pauseButton = document.querySelector(".pause-button");
 
-    pauseButton.classList.add("hidden");
-
     let hideButtonsTimer;
+
+    // Проверка на мобильное устройство
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    // Установка элементов управления в зависимости от устройства
+    if (isMobileDevice()) {
+        // Удалить кастомные кнопки и включить стандартные элементы управления
+        video.setAttribute("controls", "controls");
+        playButton.style.display = "none";
+        pauseButton.style.display = "none";
+        return;
+    } else {
+        // Оставить кастомные кнопки и стандартные элементы управления
+        video.setAttribute("controls", "controls");
+        pauseButton.classList.add("hidden");
+    }
 
     function hideButtons() {
         hideButtonsTimer = setTimeout(() => {
-            if (!video.paused && !pauseButton.matches(':hover')) {
+            if (!video.paused && !pauseButton.matches(":hover")) {
                 pauseButton.classList.add("hidden");
             }
         }, 1000);
@@ -150,19 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pauseButton.addEventListener("mouseleave", hideButtons);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const video = document.querySelector(".section__video video");
-
-    // Проверка на мобильное устройство
-    function isMobileDevice() {
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-
-    // Отключение controls на мобильных устройствах
-    if (isMobileDevice()) {
-        video.removeAttribute("controls");
-    }
-});
 
 
 

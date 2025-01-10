@@ -291,6 +291,7 @@
         line-height: 30px;
     }
 
+
     #reviews .partners-img {
 
 
@@ -420,10 +421,10 @@
 
 
     header .contact-info.active {
-        margin-left: 58%;
+        margin-left: 62%;
         margin-right: 10px;
-        text-align: center;
-        padding-top: 53%;
+        text-align: start;
+        padding-top: 55%;
         font-size: 12px;
     }
 
@@ -452,6 +453,10 @@
 
     body .section__header .section__suptitle {
         font-size: 15px;
+    }
+
+    .slider {
+        height: 100vh;
     }
 
     .section__video {
@@ -689,13 +694,7 @@
 }
 
 @media (max-width: 430px) {
-    header .contact-info.active {
-        margin-left: 58%;
-        margin-right: 10px;
-        text-align: start;
-        padding-top: 80%;
-        font-size: 12px;
-    }
+
 
 
     .header .pagination {
